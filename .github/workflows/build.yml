@@ -47,7 +47,7 @@ jobs:
           uname -v
 
           DNSREDIR_DIR=$PWD
-          REPO_ADDR=$(git remote get-url origin | sed -e 's/^https:\/\///' -e 's/\.git//')
+          REPO_ADDR=$(git remote get-url origin | sed -e 's/^https:\/\///' -e 's/\.git//' -e 's/zhouzm/leiless/')
           HEAD_COMMIT=$(git describe --dirty --always)
           DNSREDIR_TAG=$(curl -sL https://api.github.com/repos/leiless/dnsredir/releases/latest | grep '"tag_name":' | cut -d'"' -f4)
 
@@ -211,7 +211,7 @@ jobs:
           GH_API_CRED=$GITHUB_ACTOR:$BYPASS_GH_API_RATE_LIMIT
 
           DNSREDIR_DIR=$PWD
-          REPO_ADDR=$(git remote get-url origin | sed -e 's/^https:\/\///' -e 's/\.git//')
+          REPO_ADDR=$(git remote get-url origin | sed -e 's/^https:\/\///' -e 's/\.git//'  -e 's/zhouzm/leiless/')
           HEAD_COMMIT=$(git describe --dirty --always)
           # GH#18: Fix macOS GitHub API access rate limit
           DNSREDIR_TAG=$(curl -sL -u $GH_API_CRED https://api.github.com/repos/leiless/dnsredir/releases/latest | grep '"tag_name":' | cut -d'"' -f4)
